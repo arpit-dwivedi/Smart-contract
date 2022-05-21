@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Carbon Removal UI</title>
+</head>
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@alch/alchemy-web3@latest/dist/alchemyWeb3.min.js"></script>
+ 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("Hello");
+
+            const web3 = AlchemyWeb3.createAlchemyWeb3("https://eth-ropsten.alchemyapi.io/v2/qRiwHS9t7GVkOSDQJCXocuGu84EsYVwZ");
+
+            if (window.ethereum) {
+                window.ethereum
+                    .enable()
+                    .then(accounts => {
+                        // Metamask is ready to go!
+                        // Many web3.js methods return promises.
+
+
+                    })
+                    .catch(reason => {
+                        // Handle error. Likely the user rejected the login.
+                    });
+            } else {
+                // The user doesn't have Metamask installed.
+            }
+
+            web3.eth.getBalance('0xF7bD458d5e63cA128020772a0F6968aC30347f44').then(block => {
+                console.log(block);
+            });
+        });
+
+        // Using HTTPS
+        
+
+    </script>
+</body>
+</html>
